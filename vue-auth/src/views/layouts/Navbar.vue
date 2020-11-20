@@ -40,7 +40,8 @@ export default {
         .auth()
         .signOut()
         .then(() => {
-          this.$router.replace({ path: "/" });
+          this.$router.push({ path: "/" });
+          this.$noty.success("You are successfully logged out");
         });
     }
   }

@@ -31,6 +31,7 @@ export default {
         .auth()
         .signInWithEmailAndPassword(this.email, this.password)
         .then(() => {
+          this.$noty.success("You are successfully logged in");
           this.$router.replace({ name: "Home" });
         })
         .catch(err => {

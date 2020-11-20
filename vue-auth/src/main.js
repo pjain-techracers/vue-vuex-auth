@@ -4,13 +4,22 @@ import router from './router'
 import store from './store'
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
-import * as firebase from "firebase";
+import * as firebase from "firebase"
 import global from './mixins/global'
+import 'vuejs-noty/dist/vuejs-noty.css'
+import VueNoty from 'vuejs-noty'
 
 Vue.config.productionTip = false
 
 Vue.use(Buefy)
 Vue.mixin(global)
+Vue.use(VueNoty)
+
+Vue.use(VueNoty, {
+  timeout: 3000,
+  progressBar: true,
+  layout: 'topCenter'
+})
 
 const firebaseConfig = {
   apiKey: "",

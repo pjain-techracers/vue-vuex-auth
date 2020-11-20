@@ -35,10 +35,11 @@ export default {
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(data => {
           this.user = data;
+          this.$noty.success("You are successfully registered");
           console.log(data);
         })
         .catch(err => {
-          this.error = err.message;
+          this.$noty.error(err.message);
         });
     }
   }
