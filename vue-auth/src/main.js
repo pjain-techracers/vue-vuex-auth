@@ -5,10 +5,12 @@ import store from './store'
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
 import * as firebase from "firebase";
+import global from './mixins/global'
 
 Vue.config.productionTip = false
 
 Vue.use(Buefy)
+Vue.mixin(global)
 
 const firebaseConfig = {
   apiKey: "",
