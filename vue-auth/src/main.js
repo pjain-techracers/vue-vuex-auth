@@ -20,7 +20,12 @@ const firebaseConfig = {
   appId: ""
 };
 
+
 firebase.initializeApp(firebaseConfig);
+
+firebase.auth().onAuthStateChanged(user => {
+  store.dispatch("getUser", user);
+});
 
 new Vue({
   router,

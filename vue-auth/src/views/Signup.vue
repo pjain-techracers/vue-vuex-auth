@@ -22,7 +22,8 @@ export default {
   data() {
     return {
       email: "pjain@grepruby.io",
-      password: ""
+      password: "",
+      user: {}
     };
   },
   methods: {
@@ -33,6 +34,7 @@ export default {
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(data => {
+          this.user = data;
           console.log(data);
         })
         .catch(err => {

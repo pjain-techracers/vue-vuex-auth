@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import { authGuard } from "../auth/authGuard";
 
 Vue.use(VueRouter)
 
@@ -21,11 +22,12 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Signup.vue')
   },
   // TO DO: Add authGuard
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  // }
+  {
+    path: '/authentic',
+    name: 'Authentic',
+    component: () => import(/* webpackChunkName: "about" */ '../views/AuthPage.vue'),
+    beforeEnter: authGuard
+  }
 ]
 
 const router = new VueRouter({

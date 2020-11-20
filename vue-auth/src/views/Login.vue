@@ -30,7 +30,7 @@ export default {
       firebase
         .auth()
         .signInWithEmailAndPassword(this.email, this.password)
-        .then(data => {
+        .then(() => {
           this.$router.replace({ name: "Home" });
         })
         .catch(err => {
